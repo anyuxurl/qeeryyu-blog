@@ -4,20 +4,20 @@
 
 # Site
 title: qeeryyu's Blog
-subtitle: "Code builds world !"
+subtitle: "Think Different."
 description: "欢迎来到我的世界💜"
-keywords:
+keywords: qeeryyu, 博客, Vibe Coding, 技术
 author: qeeryyu Zheng
 language: zh-CN
 timezone: "Asia/Shanghai"
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://blog.qeeryyu.eu.org
 permalink: posts/:abbrlink/
 abbrlink:
-	alg: crc32
-	rep: hex 
+  alg: crc32
+  rep: hex
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks

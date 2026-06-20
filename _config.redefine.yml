@@ -151,11 +151,11 @@ home_banner:
     loop: true # Whether to loop
     smart_backspace: true # Whether to smart backspace
   # Color of home banner text
-  text_color: 
-    light: "#fff" # light mode
-    dark: "#d1d1b6" # dark mode
+  text_color:
+    light: "#ffffff" # light mode
+    dark: "#f0f0f0" # dark mode
   # Specific style of the text
-  text_style: 
+  text_style:
     # Title font size
     title_size: 2.8rem
     # Subtitle font size
@@ -163,37 +163,27 @@ home_banner:
     # Line height between title and subtitle
     line_height: 1.2
   # Home banner custom font
-  custom_font: 
+  custom_font:
     # Whether to enable custom font
     enable: false
     # Font family
-    family: 
+    family:
     # URL to font CSS file
     url:
   # Home banner social links
   social_links:
     # Whether to enable
-    enable: false
+    enable: true
     # Social links style
-    style: default # default, reverse, center
+    style: center # default, reverse, center
     # Social links
     links:
       - icon: github # can also be "fa-brands fa-github"
-        url:
-      - icon: twitter
-        url:
-      - icon: email
-        url: you@example.com
-      - icon: telegram
-        url:
-      - icon: /images/custom-icon.svg
-        url:
-    # Social links with QRcode drawers
-    qrs:
-      - icon: weixin
-        qr:
-      - icon: /images/custom-icon.svg
-        qr:
+        url: https://github.com/anyuxurl
+      - icon: fa-brands fa-x-twitter
+        url: https://x.com/qeeryyu_atopos
+      - icon: fa-brands fa-telegram
+        url: https://t.me/qeeryyuz
 # HOME BANNER <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
