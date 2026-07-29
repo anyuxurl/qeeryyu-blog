@@ -25,11 +25,11 @@ info:
 # Docs: https://redefine-docs.ohevan.com/basic/defaults
 defaults:
   # Favicon
-  favicon: /images/redefine-favicon.svg
+  favicon: /images/favicon.png
   # Site logo
-  logo: 
+  logo: /images/logo.png
   # Site avatar
-  avatar: /images/redefine-avatar.svg
+  avatar: /images/avatar.png
 # IMAGE CONFIGURATION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
@@ -99,7 +99,7 @@ global:
   # Whether to enable open graph
   open_graph:
     enable: true
-    image: /images/redefine-og.webp  # default og:image
+    image: /images/avatar.png  # default og:image
     description: qeeryyu's Blog - Think Different.
   # Google Analytics
   google_analytics:
@@ -131,8 +131,8 @@ home_banner:
   style: fixed # static or fixed
   # Home banner image
   image:
-    light: https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1920&q=80 # light mode
-    dark: https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1920&q=80 # dark mode
+    light: /images/banner.webp # light mode
+    dark: /images/banner.webp # dark mode
   # Home banner title
   title: qeeryyu's Blog
   # Home banner subtitle
@@ -140,15 +140,16 @@ home_banner:
     text:
       - Think Different.
       - Code, Create, Explore.
+      - The Intelligent choice.
     hitokoto:  # 一言配置
-      enable: false # Whether to enable hitokoto
+      enable: true # Whether to enable hitokoto
       show_author: false # Whether to show author
       api: https://v1.hitokoto.cn # API URL, can add types, see https://developer.hitokoto.cn/sentence/#%E5%8F%A5%E5%AD%90%E7%B1%BB%E5%9E%8B-%E5%8F%82%E6%95%B0
     typing_speed: 100 # Typing speed (ms)
     backing_speed: 80 # Backing speed (ms)
     starting_delay: 500 # Start delay (ms)
     backing_delay: 1500 # Backing delay (ms)
-    loop: true # Whether to loop
+    loop: false # Whether to loop
     smart_backspace: true # Whether to smart backspace
   # Color of home banner text
   text_color:
@@ -180,10 +181,13 @@ home_banner:
     links:
       - icon: github # can also be "fa-brands fa-github"
         url: https://github.com/anyuxurl
-      - icon: fa-brands fa-x-twitter
+      - icon: twitter
         url: https://x.com/qeeryyu_atopos
       - icon: fa-brands fa-telegram
         url: https://t.me/qeeryyuz
+      - icon: fa-brands fa-bilibili
+        url: https://space.bilibili.com/478146713
+
 # HOME BANNER <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
@@ -212,6 +216,9 @@ navbar:
     Categories:
       path: /categories
       icon: fa-regular fa-folder # can be empty
+    Tags:
+      path: /tags
+      icon: fa-regular fa-tags # can be empty
     About:
       path: /about
       icon: fa-regular fa-user # can be empty
@@ -337,7 +344,7 @@ articles:
 # Docs: https://redefine-docs.ohevan.com/posts/comment
 comment:
   # Whether to enable comment
-  enable: true
+  enable: false
   # Comment system
   system: waline # waline, gitalk, twikoo, giscus, utterances, artalk
   # System configuration
@@ -405,9 +412,9 @@ footer:
   customize:
   # ICP record number. See https://beian.miit.gov.cn/
   icp:
-    enable: false # Whether to enable
-    number: # ICP record number
-    url: # ICP record url
+    enable: true # Whether to enable
+    number: 萌ICP备20260866号 # ICP record number
+    url: https://icp.gov.moe/?keyword=20260866 # ICP record url
 # FOOTER <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 

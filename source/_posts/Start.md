@@ -5,6 +5,7 @@ date: 2023-08-19 11:50:05
 tags: 博客
 categories: 建站历程
 description: qeeryyu's Blog的第一篇文章 ( •̀ ω •́ )y
+excerpt: 博客几经折腾终于做得差不多了。这是qeeryyu的第一篇文章，今后会在这里断断续续的写一些东西（也有可能就这么放着。
 ---
 
 博客几经折腾终于做得差不多了
@@ -12,8 +13,6 @@ description: qeeryyu's Blog的第一篇文章 ( •̀ ω •́ )y
 这是qeeryyu的第一篇文章
 
 今后会在这里断断续续的写一些东西（也有可能就这么放着
-
-<!-- more -->
 
 ### 关于我的博客历史
 
