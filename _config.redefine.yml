@@ -131,18 +131,19 @@ home_banner:
   style: fixed # static or fixed
   # Home banner image
   image:
-    light: /images/banner.webp # light mode
-    dark: /images/banner.webp # dark mode
+    light: /images/bg/a1-paper.svg # light mode：宣纸墨色
+    dark: /images/bg/a2-ink.svg # dark mode：墨夜
   # Home banner title
   title: qeeryyu's Blog
   # Home banner subtitle
   subtitle:
+    # hitokoto 开启时，下面的固定文案不会显示（被一言整段替换）
     text:
-      - Think Different.
-      - Code, Create, Explore.
-      - The Intelligent choice.
+      - 写代码，也记录生活。
+      - 把想说的话，留在这里。
+      - 慢慢来，比较快。
     hitokoto:  # 一言配置
-      enable: true # Whether to enable hitokoto
+      enable: true # 开启后用一言接口的句子
       show_author: false # Whether to show author
       api: https://v1.hitokoto.cn # API URL, can add types, see https://developer.hitokoto.cn/sentence/#%E5%8F%A5%E5%AD%90%E7%B1%BB%E5%9E%8B-%E5%8F%82%E6%95%B0
     typing_speed: 100 # Typing speed (ms)
@@ -153,16 +154,16 @@ home_banner:
     smart_backspace: true # Whether to smart backspace
   # Color of home banner text
   text_color:
-    light: "#ffffff" # light mode
-    dark: "#f0f0f0" # dark mode
+    light: "#2b2620" # light mode：宣纸上的墨色
+    dark: "#f3ecdd" # dark mode：墨夜上的纸白
   # Specific style of the text
   text_style:
     # Title font size
-    title_size: 2.8rem
+    title_size: 2.6rem
     # Subtitle font size
-    subtitle_size: 1.5rem
+    subtitle_size: 1.05rem
     # Line height between title and subtitle
-    line_height: 1.2
+    line_height: 1.25
   # Home banner custom font
   custom_font:
     # Whether to enable custom font
@@ -272,8 +273,8 @@ home:
 articles:
   # Set the styles of the article
   style:
-    font_size: 16px # Font size
-    line_height: 1.5 # Line height
+    font_size: 17px # Font size
+    line_height: 1.5 # Line height (正文行高在 inject 中单独覆盖为 1.8)
     image_border_radius: 14px # image border radius
     image_alignment: center # image alignment. left, center
     image_caption: false # Whether to display image caption
@@ -412,9 +413,10 @@ footer:
   customize:
   # ICP record number. See https://beian.miit.gov.cn/
   icp:
-    enable: true # Whether to enable
-    number: 萌ICP备20260866号 # ICP record number
-    url: https://icp.gov.moe/?keyword=20260866 # ICP record url
+    enable: false # Whether to enable
+    # 需要恢复时把下面的注释打开即可
+    # number: 萌ICP备20260866号 # ICP record number
+    # url: https://icp.gov.moe/?keyword=20260866 # ICP record url
 # FOOTER <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
@@ -422,15 +424,231 @@ footer:
 # Docs: https://redefine-docs.ohevan.com/inject
 inject:
   # Whether to enable inject
-  enable: false
+  enable: true
   # Inject custom head html code
-  head: 
-    -
-    -
+  head:
+    - |
+      <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    - |
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/lxgwwenkaiscreen.css">
+    - |
+      <style id="custom-typography-style">
+        /* ---------- 正文：霞鹜文楷（中文）+ Geist（英文/数字） ---------- */
+        html body .markdown-body,
+        html body .home-article-content {
+          font-family: 'Geist Variable', 'LXGW WenKai Screen', 'LXGW WenKai', 'Songti SC', 'STSong', serif;
+        }
+
+        html body .markdown-body {
+          line-height: 1.8;
+          letter-spacing: 0.01em;
+        }
+
+        html body .markdown-body p:not(.not-markdown) {
+          line-height: 1.8;
+          margin-bottom: 1.1rem;
+          text-wrap: pretty;
+        }
+
+        /* 首页摘要：取消两端对齐，避免中文被拉散 */
+        html body .home-article-content {
+          text-align: left;
+          line-height: 1.75;
+        }
+
+        /* ---------- 标题：同样使用霞鹜文楷，并整体收小字号 ---------- */
+        .article-title h1.article-title-cover,
+        .article-title h1.article-title-regular,
+        html body .home-article-title,
+        html body .markdown-body h1:not(.not-markdown),
+        html body .markdown-body h2:not(.not-markdown),
+        html body .markdown-body h3:not(.not-markdown),
+        html body .markdown-body h4:not(.not-markdown),
+        html body .markdown-body h5:not(.not-markdown),
+        html body .markdown-body h6:not(.not-markdown) {
+          font-family: 'Geist Variable', 'LXGW WenKai Screen', 'LXGW WenKai', 'Songti SC', 'STSong', serif;
+          font-weight: 500;
+          letter-spacing: 0;
+        }
+
+        /* 封面上的文章大标题 */
+        .article-title h1.article-title-cover {
+          font-size: 1.5rem;
+          line-height: 1.35;
+        }
+
+        @media (min-width: 640px) {
+          .article-title h1.article-title-cover {
+            font-size: 1.75rem;
+          }
+        }
+
+        @media (min-width: 768px) {
+          .article-title h1.article-title-cover {
+            font-size: 2.25rem;
+          }
+        }
+
+        /* 无封面时的文章标题 */
+        .article-title h1.article-title-regular {
+          font-size: 1.75rem;
+          line-height: 1.35;
+        }
+
+        @media (min-width: 768px) {
+          .article-title h1.article-title-regular {
+            font-size: 2.5rem;
+          }
+        }
+
+        /* 正文小标题 */
+        html body .markdown-body h2:not(.not-markdown) {
+          font-size: 1.45rem;
+          line-height: 1.35;
+        }
+
+        html body .markdown-body h3:not(.not-markdown) {
+          font-size: 1.3rem;
+          line-height: 1.4;
+        }
+
+        html body .markdown-body h4:not(.not-markdown) {
+          font-size: 1.18rem;
+          line-height: 1.45;
+        }
+
+        @media (min-width: 768px) {
+          html body .markdown-body h2:not(.not-markdown) {
+            font-size: 2rem;
+          }
+
+          html body .markdown-body h3:not(.not-markdown) {
+            font-size: 1.6rem;
+          }
+
+          html body .markdown-body h4:not(.not-markdown) {
+            font-size: 1.38rem;
+          }
+        }
+
+        /* ---------- 首页 banner：宣纸墨色 + 文楷 ---------- */
+        html body .home-banner-container {
+          font-family: 'LXGW WenKai Screen', 'LXGW WenKai', 'Songti SC', 'STSong', serif;
+        }
+
+        html body .home-banner-container .content .description {
+          line-height: 1.25;
+          letter-spacing: 0.05em;
+          text-wrap: balance;
+        }
+
+        /* 副标题：小字 + 上方一道短墨线 */
+        html body .home-banner-container .content .description p {
+          margin-top: 1.15rem;
+          opacity: 1;
+          font-family: 'LXGW WenKai Screen', 'LXGW WenKai', 'Songti SC', 'STSong', serif;
+          font-weight: 400;
+          /* 一言的句子长短不定，给个上限让它优雅换行 */
+          max-width: min(78vw, 620px);
+          line-height: 1.85;
+          text-wrap: pretty;
+        }
+
+        html body .home-banner-container .content .description p::before {
+          content: "";
+          display: block;
+          width: 30px;
+          height: 1px;
+          margin: 0 auto 1rem;
+          background-color: currentColor;
+          opacity: 0.3;
+        }
+
+        html body .home-banner-container .content .description p i {
+          font-size: 1.05rem;
+          font-style: normal;
+          letter-spacing: 0.14em;
+          opacity: 0.72;
+        }
+
+        /* 首页社交按钮：纸上的浅色胶囊 */
+        html body .home-banner-container .social-contacts {
+          background-color: rgba(255, 253, 246, 0.62);
+          border-color: rgba(43, 38, 32, 0.12);
+          color: #2b2620;
+        }
+
+        html body .home-banner-container .social-contact-item,
+        html body .home-banner-container .social-contact-item a,
+        html body .home-banner-container .social-contact-item-qr a {
+          color: #2b2620;
+          transition: color 0.2s ease;
+        }
+
+        html body .home-banner-container .social-contact-item a:hover,
+        html body .home-banner-container .social-contact-item-qr a:hover {
+          color: #a31f34;
+        }
+
+        html.dark body .home-banner-container .social-contacts {
+          background-color: rgba(255, 255, 255, 0.07);
+          border-color: rgba(243, 236, 221, 0.16);
+          color: #f3ecdd;
+        }
+
+        html.dark body .home-banner-container .social-contact-item,
+        html.dark body .home-banner-container .social-contact-item a,
+        html.dark body .home-banner-container .social-contact-item-qr a {
+          color: #f3ecdd;
+        }
+
+        html.dark body .home-banner-container .social-contact-item a:hover,
+        html.dark body .home-banner-container .social-contact-item-qr a:hover {
+          color: #d9485f;
+        }
+
+        /* 浅色模式下，浮在宣纸上的卡片再实一点，避免和背景糊在一起 */
+        html.light body .home-article-item,
+        html.light body .sidebar-links,
+        html.light body .sidebar-content,
+        html.light body footer.footer,
+        html.light body a.page-number,
+        html.light body a.extend {
+          background-color: rgba(255, 253, 248, 0.9) !important;
+        }
+
+        /* ---------- 精简页脚：隐藏 Powered by Hexo 与主题名 ---------- */
+        footer .info-container > div:has(a[href="https://hexo.io"]) {
+          display: none;
+        }
+      </style>
   # Inject custom footer html code
   footer:
-    -
-    -
+    - |
+      <script>
+        // 一言接口偶尔超时/被拦，兜底显示一句固定文案，避免副标题一直空白
+        (function () {
+          var FALLBACK = '写代码，也记录生活。';
+          function ensureSubtitle() {
+            var el = document.getElementById('subtitle');
+            if (!el) return false;
+            if (el.textContent.trim()) return true;
+            el.textContent = FALLBACK;
+            return true;
+          }
+          function watch() {
+            var ticks = 0;
+            var timer = setInterval(function () {
+              if (ensureSubtitle() || ++ticks > 40) clearInterval(timer);
+            }, 1000);
+          }
+          if (document.readyState === 'complete') {
+            setTimeout(watch, 3000);
+          } else {
+            window.addEventListener('load', function () { setTimeout(watch, 3000); });
+          }
+        })();
+      </script>
 # INJECT <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
