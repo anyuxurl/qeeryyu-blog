@@ -2,6 +2,7 @@
 title: 博客的开端
 abbrlink: 5eb87a8b
 date: 2023-08-19 11:50:05
+cover: /images/logo.png
 tags: 博客
 categories: 建站历程
 description: qeeryyu's Blog的第一篇文章 ( •̀ ω •́ )y

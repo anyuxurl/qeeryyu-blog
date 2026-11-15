@@ -11,6 +11,7 @@ excerpt: >-
   RetroChat——没有臃肿框架、纯文字、CRT 绿屏终端风的极简 AI 聊天客户端，老设备秒开，数据全本地。
 abbrlink: 457f8973
 date: 2026-05-04 10:00:00
+cover: /images/retro-chat-crt.jpg
 ---
 
 现在的 AI 网页动辄几兆依赖，随便打开就卡死闪退。而我抽屉里还躺着一台 iPhone 5s、一个老 iPad，还有几台低配旧电脑——它们明明还能用，却被现代软件的体积挡在门外。

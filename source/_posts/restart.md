@@ -6,6 +6,7 @@ description: 时隔三年，终于想起来把这个落灰的博客重新收拾�
 excerpt: 时隔三年，终于想起来把这个落灰的博客重新收拾一下了。修好白屏，换上简洁的 Redefine 主题——这次不追求花哨，能写东西就行。
 abbrlink: 698edcdf
 date: 2026-04-04 14:00:00
+cover: /images/banner.webp
 ---
 
 ## 起因
